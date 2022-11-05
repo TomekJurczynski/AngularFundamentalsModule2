@@ -1,0 +1,44 @@
+.info-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 2em;
+}
+
+.info-title {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  /* identical to box height, or 125% */
+
+  text-transform: capitalize;
+
+  /* primary/efx-dark */
+
+  color: #333E48;
+
+  text-align: center;
+  padding: 0.3em;
+}
+
+.info-text {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+
+  text-align: center;
+
+  /* primary/efx-dark */
+
+  color: #333E48;
+
+  text-align: center;
+  padding: 0.5em 0.5em 1.2em 0.5em;
+}

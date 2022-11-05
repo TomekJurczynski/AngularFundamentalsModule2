@@ -1,0 +1,15 @@
+<ng-container *ngFor="let mockedCourseList of mockedCourseList">
+  <div class="course-card">
+    <div class="card-description">
+      <div class="card-title">{{ mockedCourseList.title }}</div>
+      <div class="card-content">{{ mockedCourseList.description }}</div>
+    </div>
+    <div class="card-details">
+      <div class="card-authors"><b>Authors: </b>{{ mockedCourseList.authors }}</div>
+      <div class="card-duration"><b>Duration: </b>{{ calculateTime(mockedCourseList.duration) }}</div>
+      <div class="card-date"><b>Created: </b>{{ mockedCourseList.creationDate | date:'dd.MM.YYYY'}}</div>
+      <app-cardbutton [buttonText]="buttonText" [iconDelete]="iconDelete" [iconEdit]="iconEdit">
+      </app-cardbutton>
+    </div>
+  </div>
+</ng-container>
