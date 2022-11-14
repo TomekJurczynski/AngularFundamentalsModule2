@@ -1,4 +1,4 @@
-<app-header>
+<!-- <app-header>
   <ng-container *ngIf="isLoggedIn">
     <div class="username">
       {{ username }}
@@ -26,16 +26,18 @@
       {{ infoButton }}
     </button>
   </app-info>
-</ng-container>
+</ng-container> -->
 
+<app-searchbox (searchTextChange)="onSearchEnter($event)"></app-searchbox>
 <ng-container *ngIf="isLoggedIn">
-  <div class="cart-list">
-    <ng-container>
+  <ng-container *ngFor="let mockedCourseList of mockedCourseList">
+    <div class="cart-list" *ngIf="searchText === '' || mockedCourseList.title.toLowerCase().includes(searchText)">
       <app-coursecard
         [buttonText] = "buttonText"
         [iconDelete] = "iconDelete"
         [iconEdit] = "iconEdit"
+        [mockedCourseList]="mockedCourseList"
       ></app-coursecard>
-    </ng-container>
-  </div>
+   </div>
+  </ng-container>
 </ng-container>

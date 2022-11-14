@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<h2>Course edit/create page</h2>
+<div class="container">
+  <form [formGroup]="editForm">
+    <div class="wrapper">
+      <div class="info">Main info</div>
+      <div class="title-container">
+        <label for="title" class="description">Title</label><br>
+        <input name="title" formControlName="title" type="text" placeholder="Title" required
+          [ngClass]="{'error-input': editForm.controls['title'].touched && editForm.hasError('required','title')}">
+        <div class="error-msg" *ngIf="editForm.controls['title'].touched && editForm.hasError('required','title')">
+          Title is required.
+        </div>
+      </div>
+
+      <div class="description-container">
+        <label for="description" class="description">Description</label><br>
+        <input class="description-input" name="description" formControlName="description" type="textaera" placeholder="Description"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [ngClass]="{'error-input':
+          editForm.controls['description'].touched && editForm.hasError('required','description')}">
+        <div class="error-msg"
+          *ngIf="editForm.controls['description'].touched && editForm.hasError('required','description')">
+          Description is required.
+        </div>
+      </div>
+      <p></p>
+      <div class="info">Authors</div>
+      <div class="authorsname-container">
+        <label for="authorsname" class="description">Authors Name</label><br>
+        <!-- <input name="authorsname" formControlName="authorsname" type="password" placeholder="Authors" required> -->
+        <input class="authorsname-input" #authors name="authorsname" type="text" placeholder="Authors" formControlName="authorName">
+        <!-- <div class="error-msg"
+          *ngIf="editForm.controls['authorsname'].touched && editForm.hasError('required','authorsname')">
+          Authors name is required.
+        </div> -->
+        <button class="author-button" type="submit" (click)="addAuthor()">CREATE AUTHOR</button><br>
+        <label for="authorslist" class="description">Authors List</label><br>
+        <span class="description" *ngFor="let name of author">{{ name }} </span>
+      </div>
+      <p></p>
+      <div class="info">Duration</div>
+      <div class="duration-container">
+        <label for="duration" class="description">Duration</label><br>
+        <input class="duration-input" #time name="duration" formControlName="duration" type="number" placeholder="Duration" required
+          min="0" [ngClass]="{'error-input': editForm.controls['duration'].touched &&
+          (editForm.hasError('required','duration') || editForm.hasError('min','duration'))}">
+        <div class="time-display">{{ calculateTime(editForm.controls['duration'].value) }}</div>
+        <div class="error-msg"
+          *ngIf="editForm.controls['duration'].touched && editForm.hasError('required','duration')">
+          Duration is required.
+        </div>
+        <div class="error-msg"
+          *ngIf="editForm.hasError('min','duration')">
+          Duration can not be lower than 0.
+        </div>
+      </div>
+
+      <div class="button-wrapper">
+        <button class="button" type="submit" (click)="onSubmit(editForm)">CANCEL</button>
+        <button class="button" type="submit" (click)="onSubmit(editForm)">CREATE COURSE</button>
+      </div>
+    </div>
+  </form>
+</div>

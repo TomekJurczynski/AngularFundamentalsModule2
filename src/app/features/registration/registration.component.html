@@ -1,1 +1,56 @@
-<p>registration works!</p>
+<app-header></app-header>
+
+<h2>Registration</h2>
+<div class="container">
+  <form [formGroup]="signupForm">
+    <div class="wrapper">
+
+      <div class="name-container">
+        <label for="name" class="description">Name</label><br>
+        <input name="name" formControlName="name" type="text" placeholder="Name" required
+          minlength="6" [ngClass]="{'error-input': (signupForm.controls['name'].touched &&
+          signupForm.hasError('required','name')) || (signupForm.controls['name'].touched &&
+          signupForm.hasError('minlength','name'))}">
+        <div class="error-msg" *ngIf="signupForm.controls['name'].touched && signupForm.hasError('required','name')">
+          Name is required.
+        </div>
+        <div class="error-msg" *ngIf="signupForm.controls['name'].touched && signupForm.hasError('minlength','name')">
+          Name should be at least 6 characters.
+        </div>
+      </div>
+
+      <div class="email-container">
+        <label for="email" class="description">Email</label><br>
+        <input name="email" formControlName="email" type="text" placeholder="Email Address"
+          appEmailvalidator required [ngClass]="{'error-input':
+          (signupForm.controls['email'].touched && signupForm.hasError('required','email')) ||
+          signupForm.controls['email'].touched && signupForm.hasError('appEmailvalidator','email')}">
+        <div class="error-msg" *ngIf="signupForm.controls['email'].touched && signupForm.hasError('required','email')">
+          Email is required.
+        </div>
+        <div class="error-msg"
+          *ngIf="signupForm.controls['email'].touched && signupForm.hasError('appEmailvalidator','email')">
+          Enter a valid Email Address
+        </div>
+      </div>
+
+      <div class="password-container">
+        <label for="password" class="description">Password</label><br>
+        <input name="password" formControlName="password" type="password" placeholder="Password"
+          required [ngClass]="{'error-input': signupForm.controls['password'].touched &&
+          signupForm.hasError('required','password')}">
+        <div class="error-msg"
+          *ngIf="signupForm.controls['password'].touched && signupForm.hasError('required','password')">
+          Password is required.
+        </div>
+      </div>
+
+      <button class="button" type="submit" (click)="onSubmit(signupForm)">Register</button>
+
+      <div class="footer">
+        If you have an account you may<br><b>Login</b>
+      </div>
+
+    </div>
+  </form>
+</div>

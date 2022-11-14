@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -13,8 +15,11 @@ import { CardbuttonComponent } from './shared/components/cardbutton/cardbutton.c
 import { InfoComponent } from './shared/components/info/info.component';
 import { InfobuttonComponent } from './shared/components/infobutton/infobutton.component';
 import { CoursecardComponent } from './shared/components/coursecard/coursecard.component';
+import { SearchboxComponent } from './shared/components/searchbox/searchbox.component';
 
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditcourseComponent } from './features/editcourse/editcourse.component'
+import { EmailvalidatorDirective } from './shared/directives/emailvalidator.directive'
 
 @NgModule({
   declarations: [
@@ -27,12 +32,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     CardbuttonComponent,
     InfoComponent,
     InfobuttonComponent,
-    CoursecardComponent
+    CoursecardComponent,
+    EditcourseComponent,
+    EmailvalidatorDirective,
+    SearchboxComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

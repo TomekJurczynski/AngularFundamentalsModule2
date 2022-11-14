@@ -1,0 +1,101 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 1.8em 4em;
+
+  width: auto;
+  height: auto;
+  border: 1px solid #CFCFCF;
+  background-color: white;
+}
+
+h2 {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+
+  text-transform: capitalize;
+
+  text-align: center;
+  color: #333E48;
+  margin-top: 2.8em;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.9em;
+  justify-content: center;
+}
+
+.email-container {
+  flex: 3;
+  margin: 0.8em auto 0 auto;
+}
+
+.password-container {
+  flex: 3;
+  margin: auto;
+}
+
+.button {
+  margin: 0.5em auto;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 36px;
+
+  border: none;
+  background: #007298;
+  border-radius: 4px;
+  color: #FFFFFF;
+  width: 11.2vw;
+}
+
+.footer {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  text-align: center;
+
+  color: #333E48;
+}
+
+.description {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #333E48;
+}
+
+input {
+  background: #FFFFFF;
+
+  border: 1px solid #CFCFCF;
+  border-radius: 4px;
+  padding: 0.7em;
+  width: 10vw;
+}
+
+.error-msg {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  color: red;
+  font-size: 10px;
+}
+
+.error-input {
+  border: 1px solid red;
+}

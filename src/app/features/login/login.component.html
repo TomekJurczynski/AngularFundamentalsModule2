@@ -1,1 +1,40 @@
-<p>login works!</p>
+<app-header></app-header>
+
+<h2>Login</h2>
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && onSubmit(loginForm.value)">
+    <div class="wrapper">
+
+      <div class="email-container">
+        <label for="email" class="description">Email</label><br>
+        <input name="email" type="text" #emailId="ngModel" [(ngModel)]="regArry.email" placeholder="Email Address"
+          required appEmailvalidator
+          [ngClass]="{'error-input': ((emailId.touched || loginForm.submitted) && emailId.errors?.['required']) ||
+          ((emailId.touched || loginForm.submitted) && emailId.errors?.['appEmailvalidator'])}">
+        <div class="error-msg" *ngIf="(emailId.touched || loginForm.submitted) && emailId.errors?.['required']">
+          Email is required.
+        </div>
+        <div class="error-msg"
+          *ngIf="(emailId.touched || loginForm.submitted) && emailId.errors?.['appEmailvalidator']">
+          Enter a valid Email Address
+        </div>
+      </div>
+
+      <div class="password-container">
+        <label for="password" class="description">Password</label><br>
+        <input name="password" type="password" #password="ngModel" [(ngModel)]="regArry.password" placeholder="Password" required
+          [ngClass]="{'error-input': (password.touched || loginForm.submitted) && password.errors?.['required']}">
+        <div class="error-msg" *ngIf="(password.touched || loginForm.submitted) && password.errors?.['required']">
+          Password is required.
+        </div>
+      </div>
+
+      <button class="button" type="submit">Login</button>
+
+      <div class="footer">
+        If you don't have an account you may<br><b>Registration</b>
+      </div>
+
+    </div>
+  </form>
+</div>

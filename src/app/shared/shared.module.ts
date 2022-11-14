@@ -10,19 +10,28 @@ import { CardbuttonComponent } from './components/cardbutton/cardbutton.componen
 import { InfoComponent } from './components/info/info.component';
 //import { InfobuttonComponent } from './components/infobutton/infobutton.component';
 import { CoursecardComponent } from './components/coursecard/coursecard.component';
+import { EmailvalidatorDirective } from './directives/emailvalidator.directive';
+import { SearchboxComponent } from './components/searchbox/searchbox.component';
 
-const allComponents = [CourseComponent, CoursesComponent, LoginComponent, RegistrationComponent, HeaderComponent, CardbuttonComponent, InfoComponent, CoursecardComponent];
 
 @NgModule({
   declarations: [
-    allComponents,
+    EmailvalidatorDirective,
+    SearchboxComponent,
+    CourseComponent,
+    CoursesComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
     CommonModule,
-    allComponents
+    HeaderComponent,
+    CardbuttonComponent,
+    InfoComponent,
+    CoursecardComponent
   ]
 })
 export class SharedModule { }
