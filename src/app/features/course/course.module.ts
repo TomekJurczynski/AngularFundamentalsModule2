@@ -7,7 +7,6 @@ import { CourseComponent } from './course.component'
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
     SharedModule
   ],
   exports: [

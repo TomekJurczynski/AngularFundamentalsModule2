@@ -1,33 +1,3 @@
-<!-- <app-header>
-  <ng-container *ngIf="isLoggedIn">
-    <div class="username">
-      {{ username }}
-    </div>
-  </ng-container>
-  <ng-container *ngIf="isLoggedIn">
-    <button class="button">
-      {{ logoutText }}
-    </button>
-  </ng-container>
-  <ng-container *ngIf="!isLoggedIn">
-    <button class="button">
-      {{ loginText }}
-    </button>
-  </ng-container>
-</app-header>
-
-
-<ng-container *ngIf="!isLoggedIn">
-  <app-info
-    [title]="infoTitle"
-    [text]="infoText"
-  >
-    <button class="info-button">
-      {{ infoButton }}
-    </button>
-  </app-info>
-</ng-container> -->
-
 <app-searchbox (searchTextChange)="onSearchEnter($event)"></app-searchbox>
 <ng-container *ngIf="isLoggedIn">
   <ng-container *ngFor="let mockedCourseList of mockedCourseList">
